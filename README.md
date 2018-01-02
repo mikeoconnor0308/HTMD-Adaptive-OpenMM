@@ -1,4 +1,4 @@
-# Project Title
+# HTMD Adaptive Sampling with OpenMM
 
 A set of example scripts for running [High Throughput Molecular Dynamics](https://www.acellera.com/products/high-throughput-molecular-dynamics/) (HTMD) with Adaptive Sampling using OpenMM. 
 
@@ -14,7 +14,7 @@ Installing HTMD through conda will automatically install the other dependencies,
 
 ### Code Structure
 
-This repository has the following structure:
+This repository has the following structure, matching the structure used for [adaptive sampling](https://software.acellera.com/docs/latest/htmd/userguide/adaptive-sampling-explained.html), and assumes familiarity:
 
 ```
 htmd-adaptive-openmm
@@ -33,9 +33,7 @@ htmd-adaptive-openmm
         |   input.pdb - Initial input coordinates in PDB form.
         |   openmm_adaptive_sim.py - Copied from generator_stuff
         |   run.sh - Copied from generator_stuff. 
-    .
-    .
-    .
+    └─── ...
 ```
 
 ### Generating Initial Conditions
@@ -48,8 +46,8 @@ required files for running adaptive sampling from the equilbrated system into fo
 ```
 ./generateOpenMMEquilibrated.sh
 ```
-The script called the python script `openmm_equilibration.py`, which reads in the starting structures and equilibrates them using the Amber10 forcefield 
-and Amber10 implicit solvent. This script should be modified as required for particular systems.  
+The script calls the python script `openmm_equilibration.py`, which reads in the starting structures and equilibrates them using the Amber10 forcefield 
+and Amber10 implicit solvent. This script should be modified as required for particular systems. It also copies the files in `generator_stuff`, which include the scripts required for production runs. 
 
 ### Running Adaptive Sampling
 
