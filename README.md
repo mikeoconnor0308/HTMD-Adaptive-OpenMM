@@ -38,7 +38,7 @@ htmd-adaptive-openmm
 
 ### Generating Initial Conditions
 
-PDB files your system with initial conditions to start sampling from should be placed in the folder `initial_conditions`. Included with the repo
+PDB files of your system with initial conditions to start sampling from should be placed in the folder `initial_conditions`. Included with the repo
 are initial conditions for studying slipknot formation in MJ0366. 
 
 The script `generateOpenMMEquilibrated.sh` can be used to take the starting structures in `initial_conditions`, run equilibration and copy all the 
@@ -46,7 +46,7 @@ required files for running adaptive sampling from the equilbrated system into fo
 ```
 ./generateOpenMMEquilibrated.sh
 ```
-The script calls the python script `openmm_equilibration.py`, which reads in the starting structures and equilibrates them using the Amber10 forcefield 
+The shell script calls the python script `openmm_equilibration.py`, which reads in the starting structures and equilibrates them using the Amber10 forcefield 
 and Amber10 implicit solvent. This script should be modified as required for particular systems. It also copies the files in `generator_stuff`, which include the scripts required for production runs. 
 
 ### Running Adaptive Sampling
